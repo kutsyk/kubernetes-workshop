@@ -1,0 +1,13 @@
+image:
+  repository: nginx
+  tag: stable
+  pullPolicy: Always
+
+nameOverride: "master-api-chart"
+fullnameOverride: "master-api-chart"
+
+service:
+  type: LoadBalancer
+  port: 80
+ingress:
+  enabled: true

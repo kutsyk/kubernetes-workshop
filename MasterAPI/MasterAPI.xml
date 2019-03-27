@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MasterAPI</name>
+    </assembly>
+    <members>
+        <member name="M:MasterAPI.Controllers.MasterController.Post(MasterAPI.Models.SetUpNewDeviceModel,System.Boolean)">
+            <summary>
+                Creates additional emulator pod with passed configurations
+            </summary>
+            <remarks></remarks>
+            <response code="200">Emulator created</response>
+            <response code="500">Oops! Something happened</response>
+        </member>
+        <member name="T:MasterAPI.Services.KubernetesService">
+            <summary>
+            Service for working with Kubernetes API
+            </summary>
+        </member>
+        <member name="M:MasterAPI.Services.KubernetesService.CreateDefaultV1Deployment(System.String,System.Boolean,System.String)">
+            <summary>
+            Creates new deployment in current running Kubernetes env
+            </summary>
+            <param name="newDeviceId"></param>
+            <param name="runOnDev"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MasterAPI.Services.KubernetesService.CreateArgsFromDeviceModel(MasterAPI.Models.SetUpNewDeviceModel,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="newDevice"></param>
+            <param name="runOnDevEnv"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
