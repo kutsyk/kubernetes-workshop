@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: master-api
+  name: rest-api
   namespace: development
   labels:
-    app: master-api
+    app: rest-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: master-api
+      app: rest-api
   template:
     metadata:
-      name: master-api
+      name: rest-api
       labels:
-        app: master-api
+        app: rest-api
     spec:
       containers:
-      - name: master-api
-        image: master-api:2
+      - name: rest-api
+        image: rest:latest
         ports:
         - containerPort: 80
         imagePullPolicy: IfNotPresent

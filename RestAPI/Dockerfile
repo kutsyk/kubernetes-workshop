@@ -9,18 +9,18 @@ EXPOSE 443
 
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
-COPY ["MasterAPI.csproj", "MasterAPI/"]
-RUN dotnet restore "MasterAPI/MasterAPI.csproj"
+COPY ["RestAPI.csproj", "RestAPI/"]
+RUN dotnet restore "RestAPI/RestAPI.csproj"
 COPY . .
 WORKDIR "/src"
-RUN dotnet build "MasterAPI.csproj" -c Release -o /app
+RUN dotnet build "RestAPI.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "MasterAPI.csproj" -c Release -o /app
+RUN dotnet publish "RestAPI.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 COPY *.xml .
-COPY config .
-ENTRYPOINT ["dotnet", "MasterAPI.dll"]
+#COPY config .
+ENTRYPOINT ["dotnet", "RestAPI.dll"]

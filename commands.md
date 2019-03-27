@@ -1,4 +1,9 @@
 - `minikube start --vm-driver hyperv --hyperv-virtual-switch "PVN"`
 - `minikube dashboard`
 - `minikube docker-env | Invoke-Expression`
-
+- `kubectl create -f deployment.yaml -n development`
+- `minikube addons enable ingress`
+- `kubectl get pods -n kube-system`
+- `kubectl expose deployment web --target-port=8080 --type=NodePort`
+- `kubectl get service web`
+- `minikube service web --url`
