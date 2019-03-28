@@ -4,3 +4,6 @@ In this repository you'll be able to find base REST api package with Dockerfile 
 
 RestAPI - contains project and `Dockerfile`
 
+File [commands.md](commands.md) contains basic list of useful commands.
+
+Folder [kube](kube) contains files which are needed for creating namespace, deployment with image and service.

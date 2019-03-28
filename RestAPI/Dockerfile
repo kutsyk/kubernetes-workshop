@@ -22,5 +22,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 COPY *.xml .
-#COPY config .
 ENTRYPOINT ["dotnet", "RestAPI.dll"]
